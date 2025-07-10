@@ -16,7 +16,7 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}  # More standard naming
         run: |
-          git remote add space https://huggingface.co/spaces/Karanm5/demo1
+          git remote add space https://HF_TOKEN@huggingface.co/spaces/Karanm5/demo1
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
