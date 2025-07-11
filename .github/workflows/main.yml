@@ -9,16 +9,17 @@ jobs:
   sync-to-hub:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
         with:
           fetch-depth: 0
       
-      - name: Configure Git
-        run: |
+      - name: Add remote
+        env: 
+          HF: ${{ secrets.HF}}
+        run: git remote add space hhtps://Karanm5:$HF@huggingface.co/spaces/Karanm5/demo1
           
-      - name: Push to Hugging Face Hub
+      - name: Push to hub
         env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: |
-          git remote add hub https://user:$HF_TOKEN@huggingface.co/spaces/Karanm5/demo1
-          git push --force hub main
+          HF: ${{ secrets.HF}}
+        run:  git remote add hub https://Karanm5:$HF@huggingface.co/spaces/Karanm5/demo1 main
+          
