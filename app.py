@@ -12,6 +12,6 @@ def predict(prompt):
 
 with gr.Blocks() as demo:
     textbox = gr.Textbox(placeholder="Enter text block to summerize", lines=4)
-    gr.Interface(fn=predict, inputs=textbox, output="text")
+    gr.Interface(fn=predict, inputs=textbox, outputs="text")
 
 demo.launch()
