@@ -20,10 +20,10 @@ jobs:
       
       - name: Add remote
         env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git remote add hub https://Karanm5:$HF_TOKEN@huggingface.co/spaces/Karanm5/demo1
+          HF: ${{ secrets.HF }}
+        run: git remote add hub https://Karanm5:$HF@huggingface.co/spaces/Karanm5/demo1
       
       - name: Push to Hugging Face
         env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF: ${{ secrets.HF }}
         run: git push hub main:main -f
